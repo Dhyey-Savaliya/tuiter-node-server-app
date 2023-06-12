@@ -16,6 +16,7 @@ const AuthController = (app) => {
   };
 
   const login = (req, res) => {
+    console.log('reg', req.body)
     const username = req.body.username;
     const password = req.body.password;
     const user = usersDao.findUserByCredentials(username, password);
@@ -29,6 +30,8 @@ const AuthController = (app) => {
 
   const profile = (req, res) => {
     const currentUser = req.session["currentUser"];
+    // const currentUser = null;
+    // return;
     if (!currentUser) {
       res.sendStatus(404);
       return;
