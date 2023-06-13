@@ -41,7 +41,7 @@ app.use(
     cors({
       credentials: true,
       origin: "https://a5--luxury-mochi-12313b.netlify.app",
-    // origin : "*",
+    // origin : "http://localhost:3000",
     })
    );
    
