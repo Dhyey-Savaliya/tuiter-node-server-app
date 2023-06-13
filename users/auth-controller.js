@@ -10,6 +10,7 @@ const AuthController = (app) => {
       res.sendStatus(409);
       return;
     }
+    console.log("hewe");
     const newUser = usersDao.createUser(req.body);
     req.session["currentUser"] = newUser;
     res.json(newUser);
@@ -22,6 +23,7 @@ const AuthController = (app) => {
     const user = usersDao.findUserByCredentials(username, password);
     if (user) {
       req.session["currentUser"] = user;
+      console.log("_login det", user);
       res.json(user);
     } else {
       res.sendStatus(404);
@@ -44,7 +46,13 @@ const AuthController = (app) => {
     res.sendStatus(200);
   };
  
- const update   = (req, res) => { };
+ const update   = (req, res) => { 
+    console.log('update', req.body)
+    const username = req.body.username;
+    const user = usersDao.findUserByUsername(username);
+    const newUser = usersDao.updateUser(req.body);
+    req.session["currentUser"] = newUser;
+    res.json(newUser);};
 
 
  app.post("/api/users/register", register);
