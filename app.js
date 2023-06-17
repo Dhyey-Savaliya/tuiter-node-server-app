@@ -8,7 +8,10 @@ import cors from 'cors'
 const app = express();
 
 import mongoose from "mongoose";
-mongoose.connect("mongodb://127.0.0.1:27017/tuiter");
+// mongoose.connect("mongodb://127.0.0.1:27017/tuiter");
+const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://127.0.0.1:27017/tuiter'
+// const CONNECTION_STRING = "mongodb+srv://dhyeysavaliya2000:<password>@cluster0.exksxhm.mongodb.net/?retryWrites=true&w=majority"
+mongoose.connect(CONNECTION_STRING);
 
 // app.use(cors());
 
@@ -42,8 +45,8 @@ app.use(
 app.use(
     cors({
       credentials: true,
-      origin: "https://luxury-mochi-12313b.netlify.app",
-    // origin : "http://localhost:3000",
+      // origin: "https://luxury-mochi-12313b.netlify.app",
+    origin : "http://localhost:3000",
     })
    );
    
