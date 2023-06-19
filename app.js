@@ -34,7 +34,7 @@ app.use(
       credentials: true,
       // origin: "https://luxury-mochi-12313b.netlify.app",
     // origin : "http://localhost:3000",
-    origin: "https://a6--fanciful-tapioca-ea98bc.netlify.app/labs"
+    origin: "https://a6--fanciful-tapioca-ea98bc.netlify.app"
     })
    );
    
