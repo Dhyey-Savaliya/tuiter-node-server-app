@@ -10,7 +10,9 @@ const app = express();
 
 import mongoose from "mongoose";
 
-const CONNECTION_STRING = "mongodb+srv://dhyeysavaliya2000:dhyey123@cluster0.exksxhm.mongodb.net/users" || 'mongodb://127.0.0.1:27017/tuiter'; 
+// const CONNECTION_STRING = "mongodb+srv://dhyeysavaliya2000:dhyey123@cluster0.exksxhm.mongodb.net/users" || 'mongodb://127.0.0.1:27017/tuiter'; 
+const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://127.0.0.1:27017/tuiter'; 
+
 console.log(process.env.DB_CONNECTION_STRING);
 console.log(CONNECTION_STRING);
 // const CONNECTION_STRING = "mongodb+srv://dhyeysavaliya2000:<password>@cluster0.exksxhm.mongodb.net/?retryWrites=true&w=majority"
